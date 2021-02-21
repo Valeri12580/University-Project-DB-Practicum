@@ -1,0 +1,173 @@
+main {
+  margin-top: 20px;
+}
+
+main .goal {
+  background-color: #54546d;
+  height: 300px;
+}
+
+main .goal img {
+  width: 150px;
+  position: absolute;
+  top: 240px;
+}
+
+main .goal h2 {
+  margin: 0;
+  padding-top: 50px;
+  text-align: center;
+  color: white;
+}
+
+main .goal-info {
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+  position: relative;
+  bottom: 130px;
+}
+
+.goal-info .info {
+  border-radius: 8px;
+  width: 500px;
+  padding: 20px;
+  box-shadow: 0px 4px 9px -5px black;
+  background-color: white;
+  text-align: center;
+  color: #665484;
+}
+
+.head {
+  margin: 40px 0px;
+}
+
+.goal-info .info .head h1 {
+  font-size: 21px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+.add-worker {
+  margin-top: 50px;
+  margin-bottom: 25px;
+}
+
+.add-worker a {
+  background-color: rgb(154, 93, 198);
+  margin-top: 5px;
+  padding: 15px 40px;
+  color: white;
+  border-radius: 50px;
+  box-shadow: 4px 5px 8px -5px black;
+}
+
+.data-table{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -65px;
+}
+.data-table article:nth-child(1) {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  color: #665484;
+}
+.data-table article h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.data-table article p {
+  margin-top: 15px;
+  font-size: 15px;
+
+}
+
+
+.container.table{
+  background-color: #34495E;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.container.table > .row.header{
+  margin-top: -10px;
+  color:#DBDD55 ;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.container.table>.row.data{
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+
+}
+
+.start-now{
+  width: 90%;
+  margin: 30px auto;
+  background-image: url(/assets/img/sign-up-prompt-background.jpg);
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  padding: 25px 50px 50px 50px;
+  border-radius: 8px;
+
+}
+.start-text{
+  margin-top: 30px;
+}
+
+.start-text h3{
+  font-weight: bold;
+}
+.start-text p{
+  font-size: 15px;
+}
+
+
+.links{
+  margin-top: 35px;
+}
+
+.links>span{
+  border-left: 2px solid white;
+  margin: 0px 55px;
+}
+
+a.add-worker{
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+a.begining{
+  padding: 10px 65px;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-weight: bold;
+  color: white;
+}
+
+a.begining.more-info{
+  color:#DBDD55;
+  font-family: "Montserrat", sans-serif;
+
+}
+
+
+
+
+/* add country css */
+.form{
+  margin: 100px auto;
+  width: 25%;
+}

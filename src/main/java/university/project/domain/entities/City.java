@@ -1,5 +1,6 @@
 package university.project.domain.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -10,6 +11,7 @@ import javax.persistence.Table;
 
 @NoArgsConstructor
 @Data
+@AllArgsConstructor
 @Entity
 @Table
 public class City extends BaseEntity {

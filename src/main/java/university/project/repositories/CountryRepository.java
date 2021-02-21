@@ -6,4 +6,8 @@ import university.project.domain.entities.Country;
 
 @Repository
 public interface CountryRepository extends JpaRepository<Country,String> {
+
+    Country findByName(String name);
 }
+
+
