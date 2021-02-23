@@ -3,3 +3,13 @@
 a:hover{
   text-decoration: none;
 }
+
+.form{
+  margin: 100px auto;
+  width: 25%;
+}
+
+main {
+  margin-top: 20px;
+}
+

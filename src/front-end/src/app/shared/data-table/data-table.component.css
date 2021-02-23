@@ -1,0 +1,65 @@
+.data-table{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: -65px;
+}
+.data-table article:nth-child(1) {
+  margin-top: 15px;
+  margin-bottom: 30px;
+  color: #665484;
+}
+.data-table article h1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.data-table article p {
+  margin-top: 15px;
+  font-size: 15px;
+
+}
+
+
+.container.table{
+  background-color: #34495E;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.container.table > .row.header{
+  margin-top: -10px;
+  color:#DBDD55 ;
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  padding: 20px 0px;
+  text-align: center;
+}
+
+.container.table>.row.data{
+  text-align: center;
+  color: white;
+  padding-bottom: 15px;
+
+}
+a.add-worker{
+  background-color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+a.begining{
+  padding: 10px 65px;
+  border-radius: 8px;
+  border: 1px solid white;
+  font-weight: bold;
+  color: white;
+}
+
+a.begining.more-info{
+  color:#DBDD55;
+  font-family: "Montserrat", sans-serif;
+
+}
