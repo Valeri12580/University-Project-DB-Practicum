@@ -15,7 +15,6 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/cities")
-@CrossOrigin(origins = "http://localhost:4200")
 public class CityController {
 
     private CityService cityService;
@@ -31,7 +30,7 @@ public class CityController {
     public ResponseEntity<List<CityViewModel>> getAllCities() {
 
         List<CityViewModel> cities = List.of(this.modelMapper.map(cityService.findAllCities(), CityViewModel[].class));
-        System.out.println("test");
+
         return ResponseEntity.ok(cities);
     }
 

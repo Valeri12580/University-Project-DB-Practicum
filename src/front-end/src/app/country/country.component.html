@@ -1,14 +1,13 @@
-
 <section class="form">
   <form>
     <div class="form-group">
       <label for="country">Име на страна</label>
-      <input type="text" class="form-control" id="country"  placeholder="Въведи име на страната">
-      <small id="countryHelp" class="form-text text-muted" >Моля въведете валидна страна.</small>
+      <input type="text" class="form-control" id="country" placeholder="Въведи име на страната">
+      <small id="countryHelp" class="form-text text-muted">Моля въведете валидна страна.</small>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </section>
 
 
-<app-data-table></app-data-table>
+<app-data-table *ngIf="countries.length !=0" [tableFields]="tableFields" [data]="countries"></app-data-table>

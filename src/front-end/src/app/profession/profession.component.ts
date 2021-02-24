@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ProfessionService} from '../core/services/profession.service';
+import {IProfession} from './IProfession';
 
 @Component({
   selector: 'app-profession',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfessionComponent implements OnInit {
 
-  constructor() { }
+  public tableFields: string[] = ['Име на професия'];
+  public professions: IProfession[] = [];
+
+  constructor(public professionService: ProfessionService) {
+    professionService.getAllProfessions().subscribe(e => {
+      this.professions = e;
+    });
+  }
 
   ngOnInit(): void {
+
+
   }
 
 }

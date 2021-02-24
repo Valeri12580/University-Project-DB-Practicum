@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-table',
@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataTableComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  public tableFields: string[] = [];
+
+  @Input()
+  public data: any[] = [];
+
+  public objectKeys: string[] = [];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+    this.objectKeys = Object.keys(this.data[0]);
   }
 
 }

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ICountry} from './ICountry';
+import {CountryService} from '../core/services/country.service';
 
 @Component({
   selector: 'app-country',
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
+  public tableFields: string[] = ['Име на страната'];
+  public countries: ICountry[] = [];
 
-  constructor() { }
+  constructor(private countryService: CountryService) {
+  }
 
   ngOnInit(): void {
+    this.countryService.getAllCountries().subscribe(e => {
+      this.countries = e;
+    });
   }
 
 }

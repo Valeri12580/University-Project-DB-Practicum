@@ -10,4 +10,4 @@
 </section>
 
 
-<app-data-table></app-data-table>
+<app-data-table *ngIf="professions.length !=0" [data]="professions" [tableFields]="tableFields"></app-data-table>

@@ -11,15 +11,15 @@ import university.project.services.interfaces.UserService;
 
 import java.util.*;
 @Controller
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/workers")
+public class WorkerController {
 
     private UserService userService;
     private ModelMapper modelMapper;
 
 
     @Autowired
-    public UserController(UserService userService, ModelMapper modelMapper) {
+    public WorkerController(UserService userService, ModelMapper modelMapper) {
         this.userService = userService;
         this.modelMapper = modelMapper;
     }

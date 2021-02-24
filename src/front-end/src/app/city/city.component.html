@@ -10,4 +10,4 @@
   </form>
 </section>
 
-<app-data-table></app-data-table>
+<app-data-table *ngIf="cities.length!=0" [tableFields]="tableFields" [data]="cities" ></app-data-table>
