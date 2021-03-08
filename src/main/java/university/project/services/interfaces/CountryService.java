@@ -7,4 +7,9 @@ import java.util.*;
 public interface CountryService {
 
     List<CountryServiceModel>findAllCountries();
+
+     void saveCountry(String name);
+
+    void deleteCountryById(String id);
+
 }

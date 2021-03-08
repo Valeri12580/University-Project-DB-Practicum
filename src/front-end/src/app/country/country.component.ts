@@ -8,6 +8,7 @@ import {CountryService} from '../core/services/country.service';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
+  public tableType: string = 'страни';
   public tableFields: string[] = ['Име на страната'];
   public countries: ICountry[] = [];
 
@@ -18,6 +19,10 @@ export class CountryComponent implements OnInit {
     this.countryService.getAllCountries().subscribe(e => {
       this.countries = e;
     });
+  }
+
+  onSubmit(): void {
+    console.log('test');
   }
 
 }

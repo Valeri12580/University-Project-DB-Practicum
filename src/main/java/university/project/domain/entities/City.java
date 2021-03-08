@@ -1,25 +1,28 @@
 package university.project.domain.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+
+import java.util.*;
 
 @NoArgsConstructor
 @Data
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Entity
 @Table
+
 public class City extends BaseEntity {
 
+    @NonNull
     private String name;
 
 
+    @NonNull
     @ManyToOne
     @JoinColumn(name = "country_id",referencedColumnName = "id")
     private Country country;
+
+    @OneToMany(mappedBy = "city",cascade = {CascadeType.REMOVE},orphanRemoval = true)
+    private List<User>users;
 }

@@ -18,4 +18,13 @@ export class ProfessionService {
   getAllProfessions(): Observable<IProfession[]> {
     return this.httpClient.get<IProfession[]>(ProfessionService.PROFESSION_API);
   }
+
+  saveProfession(name: string): Observable<any> {
+    return this.httpClient.post(`${ProfessionService.PROFESSION_API}/add`, name);
+
+  }
+
+  deleteById(id: string): Observable<any> {
+    return this.httpClient.delete(`${ProfessionService.PROFESSION_API}/${id}/delete`);
+  }
 }

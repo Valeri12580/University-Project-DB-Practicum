@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {IWorker} from '../worker/IWorker';
+import {WorkerService} from '../core/services/worker.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  public data: IWorker[] = [];
+
+  public tableFields: string[] = ['Име', 'Фамилия', 'Години', 'Телефонен номер', 'Професия', 'Град'];
+
+  constructor(public workerService: WorkerService) {
+  }
 
   ngOnInit(): void {
+    this.workerService.getAllAllWorkers().subscribe(e => {
+
+      this.data = e;
+    });
   }
 
 }

@@ -1,0 +1,11 @@
+<section class="form" >
+  <form (ngSubmit)="onSubmit()" #professionForm="ngForm">
+    <div class="form-group">
+      <label for="profession">Име на професията</label>
+      <input required [(ngModel)]="name" name="name" type="text" class="form-control" id="profession"
+             placeholder="Въведи име на професията">
+      <small id="professionHelp" class="form-text text-muted">Моля въведете валидна професия.</small>
+    </div>
+    <button [disabled]="professionForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</section>

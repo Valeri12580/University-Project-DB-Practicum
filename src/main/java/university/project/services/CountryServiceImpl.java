@@ -4,6 +4,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import university.project.domain.dtos.service.CountryServiceModel;
+import university.project.domain.entities.Country;
 import university.project.repositories.CountryRepository;
 import university.project.services.interfaces.CountryService;
 
@@ -20,9 +21,21 @@ public class CountryServiceImpl implements CountryService {
         this.modelMapper = modelMapper;
     }
 
+
+
     @Override
     public List<CountryServiceModel> findAllCountries() {
         List<CountryServiceModel> countries = List.of(this.modelMapper.map(this.countryRepository.findAll(), CountryServiceModel[].class));
         return countries;
+    }
+
+    @Override
+    public void saveCountry(String name) {
+        this.countryRepository.save(new Country(name));
+    }
+
+    @Override
+    public void deleteCountryById(String id) {
+        this.countryRepository.deleteById(id);
     }
 }

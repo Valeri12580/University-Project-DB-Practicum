@@ -1,3 +1,3 @@
-export class AppConstants{
-  public static  API_ENDPOINT:string="http://localhost:8080";
+export class AppConstants {
+  public static API_ENDPOINT = 'http://localhost:8080';
 }

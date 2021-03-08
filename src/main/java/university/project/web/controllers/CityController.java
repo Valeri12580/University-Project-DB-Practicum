@@ -4,10 +4,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import university.project.domain.dtos.service.CityServiceModel;
+import org.springframework.web.bind.annotation.*;
+import university.project.domain.dtos.binding.CityBindingModel;
 import university.project.domain.dtos.view.CityViewModel;
 import university.project.services.interfaces.CityService;
 
@@ -32,6 +30,19 @@ public class CityController {
         List<CityViewModel> cities = List.of(this.modelMapper.map(cityService.findAllCities(), CityViewModel[].class));
 
         return ResponseEntity.ok(cities);
+    }
+
+    @PostMapping("/add")
+    public ResponseEntity<Void> saveCity(@RequestBody CityBindingModel cityBindingModel) {
+       this.cityService.saveCity(cityBindingModel.getCityName(),cityBindingModel.getCountryName());
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<Void>deleteCity(@PathVariable String id){
+            this.cityService.deleteCityById(id);
+
+        return ResponseEntity.ok().build();
     }
 
 }

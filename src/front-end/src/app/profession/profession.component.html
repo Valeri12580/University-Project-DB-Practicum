@@ -1,13 +1,4 @@
-<section class="form">
-  <form>
-    <div class="form-group">
-      <label for="profession">Име на професията</label>
-      <input type="text" class="form-control" id="profession"  placeholder="Въведи име на професията">
-      <small id="professionHelp" class="form-text text-muted" >Моля въведете валидна професия.</small>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</section>
+<app-profession-form></app-profession-form>
 
 
-<app-data-table *ngIf="professions.length !=0" [data]="professions" [tableFields]="tableFields"></app-data-table>
+<app-data-table *ngIf="professions.length !=0" [data]="professions" [tableFields]="tableFields" [tableType]="tableType"></app-data-table>

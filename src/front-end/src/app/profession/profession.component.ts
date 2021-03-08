@@ -8,7 +8,7 @@ import {IProfession} from './IProfession';
   styleUrls: ['./profession.component.css']
 })
 export class ProfessionComponent implements OnInit {
-
+  public tableType: string = 'професии';
   public tableFields: string[] = ['Име на професия'];
   public professions: IProfession[] = [];
 

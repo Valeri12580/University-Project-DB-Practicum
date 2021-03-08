@@ -5,14 +5,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import university.project.domain.dtos.service.CountryServiceModel;
+import org.springframework.web.bind.annotation.*;
 import university.project.domain.dtos.view.CountryViewModel;
 import university.project.services.interfaces.CountryService;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/countries")
@@ -28,9 +25,26 @@ public class CountryController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CountryViewModel>>findAllCountries(){
+    public ResponseEntity<List<CountryViewModel>> findAllCountries() {
         List<CountryViewModel> countries = List.of(this.modelMapper.map(this.countryService.findAllCountries(), CountryViewModel[].class));
 
         return ResponseEntity.ok(countries);
     }
+
+    @PostMapping("/add")
+    public ResponseEntity<Void>addCountry(@RequestBody String name){
+
+        this.countryService.saveCountry(name);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/{id}/delete")
+    public ResponseEntity<Void>deleteCountry(@PathVariable String id){
+
+        this.countryService.deleteCountryById(id);
+
+        return ResponseEntity.ok().build();
+    }
+
+
 }

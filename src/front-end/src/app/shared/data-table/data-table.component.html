@@ -1,6 +1,6 @@
 <section class="data-table">
   <article>
-    <h1>Таблица с налични работници</h1>
+    <h1>Таблица с налични {{tableType}}</h1>
     <p>
       Тук може да видите таблицата с работници,чакащи новия си
       работодател!
@@ -13,8 +13,11 @@
     </div>
 
     <div class="row data" *ngFor="let row  of data">
-      <div *ngFor="let i of objectKeys" class="col-lg-2"> {{row[i]}}</div>
+
+      <div *ngFor="let i of objectKeys;let counter=index" class="col-lg-2"> {{row[i]}} <a (click)="deleteRow(row['id'])" ><i *ngIf="counter==objectKeys.length-1" class="fas fa-times"></i></a> </div>
+
     </div>
+
 
     <div class="row data">
       <div class="col-lg-12" style="margin-top: 45px;">

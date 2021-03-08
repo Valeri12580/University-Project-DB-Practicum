@@ -8,7 +8,7 @@ import {ICity} from './ICity';
   styleUrls: ['./city.component.css']
 })
 export class CityComponent implements OnInit {
-
+  public tableType: string = 'градове';
   public cities: ICity[] = [];
 
   public tableFields: string[] = ['Име на града', 'Страна'];

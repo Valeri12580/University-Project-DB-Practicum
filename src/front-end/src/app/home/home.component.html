@@ -29,7 +29,7 @@
   </article>
 </section>
 
-<app-data-table></app-data-table>
+<app-data-table *ngIf="data.length!=0" [tableFields]="tableFields" [data]="data"></app-data-table>
 
 
 <section class="start-now">
@@ -39,7 +39,7 @@
   </article>
 
   <article class="links">
-    <a class="add-worker">ДОБАВИ РАБОТНИК</a>
+    <a class="add-worker" routerLink="add-worker">ДОБАВИ РАБОТНИК</a>
     <span></span>
     <a class="begining" href="#start">НАЧАЛО</a>
   </article>

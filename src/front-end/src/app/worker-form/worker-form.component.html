@@ -1,0 +1,50 @@
+<section class="form">
+  <form (ngSubmit)="onSubmit()" #workerForm="ngForm">
+    <div class="form-group">
+      <label for="firstName">Първо име</label>
+      <input [(ngModel)]="worker.firstName" name="firstName" required type="text" class="form-control" id="firstName"
+             placeholder="Въведи първо име">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Последно име</label>
+      <input [(ngModel)]="worker.lastName" name="lastName" required type="text" class="form-control" id="lastName"
+             placeholder="Въведи последно име">
+
+    </div>
+
+    <div class="form-group">
+      <label for="age">Години</label>
+      <input [(ngModel)]="worker.age" name="age" required type="number" class="form-control" id="age"
+             placeholder="Въведи години">
+
+    </div>
+    <div class="form-group">
+      <label for="phoneNumber">Телефонен номер</label>
+      <input [(ngModel)]="worker.phoneNumber" name="phoneNumber" required type="number" class="form-control"
+             id="phoneNumber" placeholder="Телефонен номер">
+
+    </div>
+
+    <div class="form-group">
+      <label for="profession">Професия</label>
+      <select [(ngModel)]="worker.profession" name="profession" required class="form-control" id="profession">
+        <option *ngFor="let profession of professions"  [ngValue]="profession">{{profession}}</option>
+
+
+      </select>
+    </div>
+
+
+    <div class="form-group">
+      <label for="city">Избери град</label>
+      <select [(ngModel)]="worker.city" name="city" required class="form-control" id="city">
+        <option *ngFor="let city of cities" [ngValue]="city">{{city}}</option>
+      </select>
+    </div>
+
+
+    <button [disabled]="workerForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</section>

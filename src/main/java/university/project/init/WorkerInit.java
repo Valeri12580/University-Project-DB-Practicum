@@ -31,6 +31,7 @@ public class WorkerInit implements CommandLineRunner {
     public void run(String... args) throws Exception {
         Profession programmer=this.professionRepository.findByName("Java Backend Developer");
         Profession cleaner=this.professionRepository.findByName("WC Cleaner");
+
         City plovdiv=this.cityRepository.findByName("Plovdiv");
         City usa=this.cityRepository.findByName("New York");
         User valeri=new User("Valeri","Stoqnov",20,"0877160366",programmer,plovdiv);

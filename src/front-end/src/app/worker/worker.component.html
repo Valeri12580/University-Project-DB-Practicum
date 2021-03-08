@@ -1,53 +1,7 @@
-<section class="form">
-  <form>
-    <div class="form-group">
-      <label for="firstName">Първо име</label>
-      <input type="text" class="form-control" id="firstName"  placeholder="Въведи първо име">
-    </div>
+<app-worker-form></app-worker-form>
 
-    <div class="form-group">
-      <label for="lastName">Последно име</label>
-      <input type="text" class="form-control" id="lastName"  placeholder="Въведи последно име">
-
-    </div>
-
-    <div class="form-group">
-      <label for="age">Години</label>
-      <input type="number" class="form-control" id="age"  placeholder="Въведи години">
-
-    </div>
-    <div class="form-group">
-      <label for="phoneNumber">Телефонен номер</label>
-      <input type="number" class="form-control" id="phoneNumber"  placeholder="Телефонен номер">
-
-    </div>
-
-    <div class="form-group">
-      <label for="profession">Професия</label>
-      <select  class="form-control" id="profession">
-        <option>Програмист</option>
-        <option>Чистач</option>
-
-      </select>
-    </div>
-
-
-    <div class="form-group">
-      <label for="city">Избери град</label>
-      <select  class="form-control" id="city">
-        <option>Пловдив</option>
-        <option>София</option>
-
-      </select>
-    </div>
-
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-
-</section>
-
-<app-data-table></app-data-table>
+<app-data-table *ngIf="data.length !=0" [tableFields]="tableFields" [data]="data" [tableType]="tableType"
+></app-data-table>
 
 
 

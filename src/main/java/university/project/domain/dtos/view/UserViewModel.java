@@ -5,7 +5,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class UserViewModel {
+public class UserViewModel extends BaseViewModel {
     private String firstName;
     private String lastName;
     private int age;
@@ -13,5 +13,6 @@ public class UserViewModel {
 
     private String professionName;
 
-    private CityViewModel city;
+    private String cityName;
+
 }
