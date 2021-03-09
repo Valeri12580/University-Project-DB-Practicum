@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {AppConstants} from '../../AppConstants';
 import {Observable} from 'rxjs';
 import {IWorker} from '../../worker/IWorker';
-import {IWorkerAdd} from '../../profession-form/IWorkerAdd';
+import {IWorkerAdd} from '../../worker-form/IWorkerAdd';
 
 @Injectable({
   providedIn: 'root'

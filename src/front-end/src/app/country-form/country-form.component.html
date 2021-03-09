@@ -2,8 +2,8 @@
   <form (ngSubmit)="onSubmit()" #countryForm="ngForm">
     <div class="form-group">
       <label for="country">Име на страна</label>
-      <input required [(ngModel)]="name" name="name" type="text" class="form-control" id="country"
-             placeholder="Въведи име на страната">
+      <input required [(ngModel)]="entity.name" name="name" type="text" class="form-control" id="country"
+             placeholder="Въведи име на страната" [value]="entity.name">
       <small id="countryHelp" class="form-text text-muted">Моля въведете валидна страна.</small>
     </div>
     <button [disabled]="countryForm.invalid" type="submit" class="btn btn-primary">Submit</button>

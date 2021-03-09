@@ -12,4 +12,6 @@ public interface CountryService {
 
     void deleteCountryById(String id);
 
+    void updateCountry(String id, String name);
+
 }

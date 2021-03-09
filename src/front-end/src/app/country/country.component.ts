@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ICountry} from './ICountry';
 import {CountryService} from '../core/services/country.service';
+import {AddCountry} from '../country-form/AddCountry';
 
 @Component({
   selector: 'app-country',
@@ -12,6 +13,8 @@ export class CountryComponent implements OnInit {
   public tableFields: string[] = ['Име на страната'];
   public countries: ICountry[] = [];
 
+  public formEntity: AddCountry = new AddCountry();
+
   constructor(private countryService: CountryService) {
   }
 
@@ -21,8 +24,9 @@ export class CountryComponent implements OnInit {
     });
   }
 
-  onSubmit(): void {
-    console.log('test');
+  handleEventEmitter(entity: AddCountry): void {
+   this.formEntity=entity;
+
   }
 
 }

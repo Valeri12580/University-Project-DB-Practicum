@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import university.project.domain.dtos.binding.CountryBindingModel;
 import university.project.domain.dtos.view.CountryViewModel;
 import university.project.services.interfaces.CountryService;
 
@@ -32,11 +33,20 @@ public class CountryController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Void>addCountry(@RequestBody String name){
+    public ResponseEntity<Void>addCountry(@RequestBody CountryBindingModel model){
 
-        this.countryService.saveCountry(name);
+        this.countryService.saveCountry(model.getName());
         return ResponseEntity.ok().build();
     }
+
+    @PutMapping("/update")
+    public ResponseEntity<Void>updateCountry(@RequestBody CountryBindingModel model){
+
+        this.countryService.updateCountry(model.getId(),model.getName());
+        return ResponseEntity.ok().build();
+    }
+
+
 
     @DeleteMapping("/{id}/delete")
     public ResponseEntity<Void>deleteCountry(@PathVariable String id){

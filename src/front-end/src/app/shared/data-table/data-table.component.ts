@@ -5,6 +5,9 @@ import {CityService} from '../../core/services/city.service';
 import {ProfessionService} from '../../core/services/profession.service';
 import {WorkerService} from '../../core/services/worker.service';
 import {Observable} from 'rxjs';
+import {Output, EventEmitter} from '@angular/core';
+import {AddCountry} from '../../country-form/AddCountry';
+
 
 @Component({
   selector: 'app-data-table',
@@ -13,6 +16,8 @@ import {Observable} from 'rxjs';
 })
 export class DataTableComponent implements OnInit {
 
+  @Output()
+  public countryEntityEmitter = new EventEmitter<AddCountry>();
 
   @Input()
   public tableType: string = '';
@@ -54,6 +59,15 @@ export class DataTableComponent implements OnInit {
       });
 
     });
+
+  }
+
+  updateRow(rowIndex: number): void {
+    // const entityType = this.activatedRoute.snapshot.url.toString();
+    const entity = new AddCountry();
+    entity.name = this.data[rowIndex]['name'];
+    entity.id = this.data[rowIndex]['id'];
+    this.countryEntityEmitter.emit(entity);
 
   }
 

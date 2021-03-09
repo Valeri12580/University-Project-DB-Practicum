@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {WorkerService} from '../core/services/worker.service';
 import {ProfessionService} from '../core/services/profession.service';
 import {CityService} from '../core/services/city.service';
-import {IWorkerAdd} from '../profession-form/IWorkerAdd';
+import {IWorkerAdd} from './IWorkerAdd';
 import {Router} from '@angular/router';
 
 @Component({

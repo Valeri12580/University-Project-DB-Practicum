@@ -12,9 +12,13 @@
 
     </div>
 
-    <div class="row data" *ngFor="let row  of data">
+    <div class="row data" *ngFor="let row  of data;let rowIndex=index">
 
-      <div *ngFor="let i of objectKeys;let counter=index" class="col-lg-2"> {{row[i]}} <a (click)="deleteRow(row['id'])" ><i *ngIf="counter==objectKeys.length-1" class="fas fa-times"></i></a> </div>
+      <div *ngFor="let i of objectKeys;let counter=index" class="col-lg-2"> {{row[i]}}
+        <a (click)="deleteRow(row['id'])" *ngIf="counter==objectKeys.length-1" ><i  class="fas fa-times"></i></a>
+        <a (click)="updateRow(rowIndex)" *ngIf="counter==objectKeys.length-1" ><i class="far fa-edit"></i></a>
+
+      </div>
 
     </div>
 

@@ -5,6 +5,7 @@ import {Observable} from 'rxjs';
 import {ICountry} from '../../country/ICountry';
 
 import {Router} from '@angular/router';
+import {AddCountry} from '../../country-form/AddCountry';
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,15 @@ export class CountryService {
 
   }
 
-  saveCountry(name: string): Observable<any> {
+  saveCountry(entity: AddCountry): Observable<any> {
 
-    return this.httpClient.post(`${CountryService.COUNTRY_API}/add`, name);
+    return this.httpClient.post(`${CountryService.COUNTRY_API}/add`, entity);
 
+  }
+
+  updateCountry(entity: AddCountry): Observable<any> {
+
+    return this.httpClient.put(`${CountryService.COUNTRY_API}/update`, entity);
   }
 
   deleteById(id: string): Observable<any> {

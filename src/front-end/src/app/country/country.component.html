@@ -1,4 +1,4 @@
-<app-country-form></app-country-form>
+<app-country-form [entity]="formEntity"></app-country-form>
 
 
-<app-data-table *ngIf="countries.length !=0" [tableFields]="tableFields" [data]="countries" [tableType]="tableType"></app-data-table>
+<app-data-table (countryEntityEmitter)="handleEventEmitter($event)" *ngIf="countries.length !=0" [tableFields]="tableFields" [data]="countries" [tableType]="tableType"></app-data-table>

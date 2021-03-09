@@ -22,7 +22,6 @@ public class CountryServiceImpl implements CountryService {
     }
 
 
-
     @Override
     public List<CountryServiceModel> findAllCountries() {
         List<CountryServiceModel> countries = List.of(this.modelMapper.map(this.countryRepository.findAll(), CountryServiceModel[].class));
@@ -37,5 +36,12 @@ public class CountryServiceImpl implements CountryService {
     @Override
     public void deleteCountryById(String id) {
         this.countryRepository.deleteById(id);
+    }
+
+    @Override
+    public void updateCountry(String id, String newName) {
+        Country country = this.countryRepository.findById(id).get();
+        country.setName(newName);
+        this.countryRepository.save(country);
     }
 }
