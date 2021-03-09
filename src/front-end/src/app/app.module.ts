@@ -16,6 +16,7 @@ import {CountryFormComponent} from './country-form/country-form.component';
 import { CityFormComponent } from './city-form/city-form.component';
 import { ProfessionFormComponent } from './profession-form/profession-form.component';
 import { WorkerFormComponent } from './worker-form/worker-form.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { WorkerFormComponent } from './worker-form/worker-form.component';
     CityComponent,
     ProfessionComponent,
     CountryComponent
-    , WorkerComponent, CountryFormComponent, CityFormComponent, ProfessionFormComponent, WorkerFormComponent
+    , WorkerComponent, CountryFormComponent, CityFormComponent, ProfessionFormComponent, WorkerFormComponent, SearchBarComponent
   ],
   imports: [
     BrowserModule,

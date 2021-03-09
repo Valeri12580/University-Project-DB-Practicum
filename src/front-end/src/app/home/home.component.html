@@ -29,7 +29,11 @@
   </article>
 </section>
 
-<app-data-table *ngIf="data.length!=0" [tableFields]="tableFields" [data]="data"></app-data-table>
+
+
+<app-search-bar (eventEmitter)="handle($event)"></app-search-bar>
+
+<app-data-table  *ngIf="data.length!=0" [tableFields]="tableFields" [data]="data"></app-data-table>
 
 
 <section class="start-now">

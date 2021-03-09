@@ -48,4 +48,17 @@ public class UserServiceImpl implements UserService {
     public void deleteWorkerById(String id) {
         this.userRepository.deleteById(id);
     }
+
+    @Override
+    public List<UserServiceModel> findWorkersByCriteria(String professionCriteria, String cityCriteria) {
+        List<User> result;
+        if (!professionCriteria.equals("") && !cityCriteria.equals("")) {
+            result = this.userRepository.findAllByAndCity_NameAndProfession_Name(cityCriteria, professionCriteria);
+        } else if (cityCriteria.equals("")) {
+            result = userRepository.findAllByProfession_Name(professionCriteria);
+        } else {
+            result = userRepository.findAllByCity_Name(cityCriteria);
+        }
+        return List.of(this.modelMapper.map(result, UserServiceModel[].class));
+    }
 }

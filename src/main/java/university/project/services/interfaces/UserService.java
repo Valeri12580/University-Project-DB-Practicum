@@ -11,4 +11,6 @@ public interface UserService {
     void addUser(String firstName, String lastName, int age, String phoneNumber, String city, String profession);
 
     void deleteWorkerById(String id);
+
+    List<UserServiceModel> findWorkersByCriteria(String professionCriteria, String cityCriteria);
 }

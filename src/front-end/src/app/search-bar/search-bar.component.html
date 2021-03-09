@@ -1,0 +1,38 @@
+<section class="data-table">
+  <article>
+    <h1>Търси по критерии...</h1>
+  </article>
+
+  <form  (ngSubmit)="submit()" #form="ngForm">
+
+    <div class="form-check">
+      <input (click)="checkPositionSearch()" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">
+        Търси по позиция
+      </label>
+    </div>
+
+    <div *ngIf="isPositionSearchActive" class="form-group">
+
+      <input [attr.required]="isPositionSearchActive" [(ngModel)]="positionName" name="positionName" required type="text" class="form-control" id="positionName"
+             placeholder="Въведи позиция...">
+    </div>
+
+    <div class="form-check">
+      <input (click)="checkCitySearch()" class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <label class="form-check-label" for="defaultCheck1">
+        Търси по град
+      </label>
+    </div>
+
+    <div *ngIf="isCitySearchActive" class="form-group">
+
+      <input [(ngModel)]="cityName" name="cityName" [attr.required]="isCitySearchActive" type="text" class="form-control" id="cityName"
+             placeholder="Въведи град...">
+    </div>
+
+    <button  [disabled]="form.invalid" *ngIf="isPositionSearchActive || isCitySearchActive" type="submit" class="btn btn-primary">
+      Submit
+    </button>
+  </form>
+</section>

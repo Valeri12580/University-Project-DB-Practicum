@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {IWorker} from '../worker/IWorker';
 import {WorkerService} from '../core/services/worker.service';
 
@@ -9,6 +9,8 @@ import {WorkerService} from '../core/services/worker.service';
 })
 export class HomeComponent implements OnInit {
 
+
+  @Input()
   public data: IWorker[] = [];
 
   public tableFields: string[] = ['Име', 'Фамилия', 'Години', 'Телефонен номер', 'Професия', 'Град'];
@@ -23,4 +25,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  handle(data: IWorker[]): void {
+    this.data = data;
+  }
 }
