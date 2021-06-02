@@ -3,8 +3,6 @@ import {AppConstants} from '../../AppConstants';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {ICountry} from '../../country/ICountry';
-
-import {Router} from '@angular/router';
 import {AddCountry} from '../../country-form/AddCountry';
 
 @Injectable({
@@ -17,7 +15,7 @@ export class CountryService {
   constructor(private httpClient: HttpClient) {
   }
 
-  getAllCountries(): Observable<ICountry[]> {
+  getAllCountries(): Observable<ICountry  []> {
 
     return this.httpClient.get<ICountry[]>(CountryService.COUNTRY_API);
 

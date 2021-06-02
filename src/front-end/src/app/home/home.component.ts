@@ -19,8 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.workerService.getAllAllWorkers().subscribe(e => {
-
+    this.workerService.getAllWorkers().subscribe(e => {
       this.data = e;
     });
   }

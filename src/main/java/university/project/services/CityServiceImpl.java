@@ -28,8 +28,6 @@ public class CityServiceImpl implements CityService {
 
     @Override
     public List<CityServiceModel> findAllCities() {
-
-
         return List.of(this.modelMapper.map(cityRepository.findAll(),CityServiceModel[].class));
     }
 

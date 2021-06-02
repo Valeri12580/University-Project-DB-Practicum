@@ -25,8 +25,7 @@ export class CountryComponent implements OnInit {
   }
 
   handleEventEmitter(entity: AddCountry): void {
-   this.formEntity=entity;
-
+    this.formEntity = entity;
   }
 
 }

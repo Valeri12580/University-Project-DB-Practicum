@@ -18,10 +18,7 @@ export class CityComponent implements OnInit {
 
   ngOnInit(): void {
     this.cityService.getAllCities().subscribe(e => {
-
       this.cities = e;
-
-
     });
 
   }

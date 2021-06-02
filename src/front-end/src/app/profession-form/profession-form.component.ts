@@ -18,7 +18,6 @@ export class ProfessionFormComponent implements OnInit {
 
   onSubmit(): void {
     this.professionService.saveProfession(this.name).subscribe(e => {
-
       this.router.navigateByUrl('/', {skipLocationChange: true}).then(() => {
         this.router.navigate(['/professions']);
       });

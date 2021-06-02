@@ -6,10 +6,10 @@
       работодател!
     </p>
   </article>
+
   <article class="container table">
     <div class="row header">
       <div *ngFor="let field of tableFields" class="col-lg-2">{{field}}</div>
-
     </div>
 
     <div class="row data" *ngFor="let row  of data;let rowIndex=index">
@@ -19,9 +19,7 @@
         <a (click)="updateRow(rowIndex)" *ngIf="counter==objectKeys.length-1" ><i class="far fa-edit"></i></a>
 
       </div>
-
     </div>
-
 
     <div class="row data">
       <div class="col-lg-12" style="margin-top: 45px;">

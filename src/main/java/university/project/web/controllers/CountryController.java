@@ -41,7 +41,6 @@ public class CountryController {
 
     @PutMapping("/update")
     public ResponseEntity<Void>updateCountry(@RequestBody CountryBindingModel model){
-
         this.countryService.updateCountry(model.getId(),model.getName());
         return ResponseEntity.ok().build();
     }
@@ -50,9 +49,7 @@ public class CountryController {
 
     @DeleteMapping("/{id}/delete")
     public ResponseEntity<Void>deleteCountry(@PathVariable String id){
-
         this.countryService.deleteCountryById(id);
-
         return ResponseEntity.ok().build();
     }
 

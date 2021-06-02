@@ -12,15 +12,12 @@ export class ProfessionComponent implements OnInit {
   public tableFields: string[] = ['Име на професия'];
   public professions: IProfession[] = [];
 
-  constructor(public professionService: ProfessionService) {
-    professionService.getAllProfessions().subscribe(e => {
+  constructor(private professionService: ProfessionService) {
+  }
+  ngOnInit(): void {
+    this.professionService.getAllProfessions().subscribe(e => {
       this.professions = e;
     });
-  }
-
-  ngOnInit(): void {
-
-
   }
 
 }

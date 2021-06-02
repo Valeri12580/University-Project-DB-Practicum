@@ -14,8 +14,6 @@ export class HomeService {
   }
 
   searchByCriteria(professionCriteria: string, cityCriteria: string): Observable<IWorker[]> {
-
-
     return this.httpClient.get<IWorker[]>(HomeService.HOME_ENDPOINT, {
       params: {
         professionCriteria: professionCriteria,

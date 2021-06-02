@@ -13,16 +13,11 @@ export class WorkerService {
   public static WORKER_API = `${AppConstants.API_ENDPOINT}/workers`;
 
   constructor(private  httpClient: HttpClient) {
-
-
   }
 
-  getAllAllWorkers(): Observable<IWorker[]> {
-
-
+  getAllWorkers(): Observable<IWorker[]> {
     return this.httpClient.get<IWorker[]>(WorkerService.WORKER_API);
   }
-
 
   saveWorker(worker: IWorkerAdd): Observable<any> {
     return this.httpClient.post(`${WorkerService.WORKER_API}/add`, worker);

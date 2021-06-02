@@ -12,7 +12,7 @@ export class CityService {
   public static CITY_ENDPOINT = `${AppConstants.API_ENDPOINT}/cities`;
 
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private httpClient: HttpClient) {
   }
 
 
